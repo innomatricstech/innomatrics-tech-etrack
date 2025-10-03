@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import { configureStore, createSlice } from "@reduxjs/toolkit";
-import Logo from "./../public/assets/ETrack.png"
+import Logo from "./assets/images/etrack.png"
 import "./App.css"; // Custom CSS (Crucial for the new look)
 
 // --- Redux Setup ---
@@ -20,9 +20,6 @@ const contactSlice = createSlice({
 const { addSubmission } = contactSlice.actions;
 const store = configureStore({ reducer: { contact: contactSlice.reducer } });
 
-              
-
-
 // Navbar (UPDATED LOGO WRAPPER AND STYLE)
 function Navbar() {
   return (
@@ -32,7 +29,7 @@ function Navbar() {
         <div className="Logo"> 
           <a className="navbar-brand" href="#">
             <img 
-              src={Logo} 
+               src={Logo}  
               alt="ETrack Title Services Logo" 
               style={{ 
                 height: '75px', // Adjusted size for better integration

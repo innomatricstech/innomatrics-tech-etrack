@@ -20,6 +20,8 @@ const contactSlice = createSlice({
 const { addSubmission } = contactSlice.actions;
 const store = configureStore({ reducer: { contact: contactSlice.reducer } });
 
+              
+
 
 // Navbar (UPDATED LOGO WRAPPER AND STYLE)
 function Navbar() {

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import { configureStore, createSlice } from "@reduxjs/toolkit";
-import Logo from "./assets/ETrack.png"
+import Logo from "./Assets/ETrack.png"
 import "./App.css"; // Custom CSS (Crucial for the new look)
 
 // --- Redux Setup ---

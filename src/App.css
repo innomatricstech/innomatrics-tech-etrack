@@ -1,0 +1,203 @@
+/* ---------------- Custom Brand Colors and Variables ---------------- */
+:root {
+  --brand-blue-dark: #003366; /* Deep Blue from Logo - Primary Background */
+  --brand-blue-light: #007bff; /* Brighter Blue - Secondary/Accent */
+  --brand-text-color: #1e1e1e; /* Darker text for readability */
+  --section-bg-light: #f8f9fa; /* Light grey background for contrast sections */
+  --section-padding: 80px 0; /* Standard padding for all sections */
+  --navbar-padding-y: 1.5rem; /* Increased vertical padding for bigger logo */
+}
+
+/* ---------------- Base Styles ---------------- */
+body {
+  font-family: 'Arial', sans-serif;
+  color: var(--brand-text-color);
+  background-color: white;
+  margin: 0;
+}
+
+/* ---------------- Navigation ---------------- */
+.brand-bg {
+  background-color: var(--brand-blue-dark) !important;
+}
+
+.navbar {
+  padding-top: var(--navbar-padding-y);
+  padding-bottom: var(--navbar-padding-y);
+  min-height: 90px; /* Enough height for logo + padding */
+  display: flex;
+  align-items: center;
+}
+.Logo img {
+  height: 100px;
+  border-radius: 12px; /* slightly more rounded for modern look */
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(135deg, #dbddde, #e5eaeb); /* subtle gradient overlay */
+  padding: 1px; /* gives space for gradient glow */
+}
+
+.Logo img.logo-hover:hover {
+  transform: scale(1.15) rotate(-2deg); /* pop + tilt */
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.6));
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.7), 0 0 25px rgba(0, 212, 255, 0.5); /* glowing effect */
+  cursor: pointer;
+}
+
+/* Navbar Links */
+.navbar .nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link:hover {
+  color: white !important;
+}
+
+.navbar .btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.navbar .btn-outline-light:hover {
+  background-color: var(--brand-blue-light);
+  border-color: var(--brand-blue-light);
+  color: white;
+}
+
+/* ---------------- Reusable Section Styles ---------------- */
+.section-padding {
+  padding: var(--section-padding);
+}
+
+.section-padding-lg {
+  padding: 100px 0;
+}
+
+.bg-light-section {
+  background-color: var(--section-bg-light);
+}
+
+.brand-text {
+  color: var(--brand-blue-dark);
+}
+
+/* ---------------- Home (Hero) Section ---------------- */
+.hero-section {
+  height: 60vh;
+  min-height: 400px;
+  background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.85)),
+              url('https://picsum.photos/1920/1080?grayscale') center/cover no-repeat;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------------- Services Section ---------------- */
+.service-card {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* ---------------- Why Choose Us Section ---------------- */
+.why-list {
+  font-size: 1.15rem;
+  line-height: 2.2;
+}
+
+.why-list li {
+  background-color: white;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border-left: 5px solid var(--brand-blue-dark);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* ---------------- Contact Form ---------------- */
+.brand-btn {
+  background-color: var(--brand-blue-dark);
+  color: white;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.brand-btn:hover {
+  background-color: var(--brand-blue-light);
+  color: white;
+}
+
+.form-control:focus {
+  border-color: var(--brand-blue-light);
+  box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+.brand-link {
+  color: var(--brand-blue-dark);
+  text-decoration: none;
+}
+
+.brand-link:hover {
+  color: var(--brand-blue-light);
+  text-decoration: underline;
+}
+
+/* ---------------- Mobile Adjustments ---------------- */
+@media (max-width: 991px) {
+  .navbar {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .hero-section {
+    height: 50vh;
+  }
+
+  .section-padding {
+    padding: 50px 0;
+  }
+
+  /* Reduce logo size on mobile */
+  .brand-logo {
+    height: 50px;
+  }
+
+  .brand-logo-text {
+    font-size: 1.2rem;
+  }
+}
+
+/* ---------------- Custom Utility Styles ---------------- */
+.bg-primary-light {
+  background-color: var(--brand-blue-light);
+  color: white;
+}
+
+.service-list-white li {
+  padding: 5px 0;
+}
+
+.why-list-small li {
+  margin-bottom: 5px;
+  padding: 5px 0;
+  font-size: 0.95rem;
+}
+
+.card-hover-light {
+  border: 1px solid #e9ecef;
+  transition: box-shadow 0.3s ease;
+}
+
+.card-hover-light:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Ensure the Mortgage card background is white */
+.mortgage-card {
+  background-color: white !important;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom"; 
-import Logo from "../assets/Logo.png"
+import Logo from "../assets/images/logo.png"
 
 // Helper function to scroll to an anchor ID, compensating for fixed header height
 const scrollToHash = (hash) => {

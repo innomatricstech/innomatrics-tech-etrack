@@ -11,14 +11,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Setup path variables for frontend
+// -------------------- Frontend paths --------------------
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Serve frontend build folder
 app.use(express.static(path.join(__dirname, "frontend/dist")));
 
-// Zoho Mail transporter
+// -------------------- Nodemailer setup --------------------
 const ZOHO_PASSWORD = process.env.ZOHO_PASS
   ? process.env.ZOHO_PASS.trim()
   : process.env.ZOHO_APP_PASSWORD;
@@ -35,7 +35,7 @@ const transporter = nodemailer.createTransport({
 
 // -------------------- API ROUTES --------------------
 
-// 1️⃣ Send Order Email
+// Send order email
 app.post("/send-order", async (req, res) => {
   const order = req.body;
 
@@ -44,7 +44,8 @@ app.post("/send-order", async (req, res) => {
     to: order.customer_email,
     cc: process.env.REACT_APP_ZOHO_COPY,
     subject: `✅ Order Confirmation - ${order.order_number}`,
-    html: `<h2>Order #${order.order_number} Confirmed</h2><p>Dear ${order.first_name}, your order has been received!</p>`,
+    html: `<h2>Order #${order.order_number} Confirmed</h2>
+           <p>Dear ${order.first_name}, your order has been received!</p>`,
   };
 
   try {
@@ -57,7 +58,7 @@ app.post("/send-order", async (req, res) => {
   }
 });
 
-// 2️⃣ Contact Us Email
+// Contact Us email
 app.post("/contact-us", async (req, res) => {
   const inquiry = req.body;
 
@@ -66,7 +67,11 @@ app.post("/contact-us", async (req, res) => {
     to: process.env.REACT_APP_ZOHO_COPY,
     replyTo: inquiry.email,
     subject: `🌐 New Website Inquiry: ${inquiry.service} from ${inquiry.name}`,
-    html: `<h2>New Contact Inquiry</h2><p>Name: ${inquiry.name}<br>Email: ${inquiry.email}<br>Message: ${inquiry.message}</p>`,
+    html: `<h2>New Contact Inquiry</h2>
+           <p>Name: ${inquiry.name}</p>
+           <p>Email: ${inquiry.email}</p>
+           <p>Service: ${inquiry.service}</p>
+           <p>Message: ${inquiry.message}</p>`,
   };
 
   try {
@@ -79,14 +84,11 @@ app.post("/contact-us", async (req, res) => {
   }
 });
 
-// -------------------- Serve Frontend --------------------
-
-// Catch all other routes and serve React frontend
-app.get("*", (req, res) => {
+// -------------------- Serve frontend for all other routes --------------------
+app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend/dist", "index.html"));
 });
 
-// -------------------- Start Server --------------------
-
+// -------------------- Start server --------------------
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom"; 
-import Logo from "../assets/images/etrack.png"
+import Logo from "../assets/Logo.png"
 
 // Helper function to scroll to an anchor ID, compensating for fixed header height
 const scrollToHash = (hash) => {
@@ -86,7 +86,7 @@ export default function Footer() {
                     />
                 </Link>
               <p className="small opacity-75 "  style={{  marginTop: '-90px' }} >
-                ETrack Title Services delivers fast, accurate, and compliant title back-office services, helping you close deals faster and reduce risks. Let us handle the details while you focus on growth!
+                eTrack Title Services delivers fast, accurate, and compliant title back-office services, helping you close deals faster and reduce risks. Let us handle the details while you focus on growth!
               </p>
             </div>
 
@@ -109,7 +109,7 @@ export default function Footer() {
                         to="#why" 
                         className="text-secondary  text-decoration-none mb-2 d-block hover-sky-blue"
                         onClick={(e) => handleAnchorClick(e, "#why")}
-                    >Why Choose ETrack</Link>
+                    >Why Choose eTrack</Link>
                 </li>
                 <li>
                     <Link 

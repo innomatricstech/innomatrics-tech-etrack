@@ -3,17 +3,17 @@ import Img2 from "../assets/images/1 Row Houses.jpg";
 
 export default function WhyChoose() {
   const benefits = [
-    { iconClass: "bi bi-award-fill", title: "Proven Expertise", text: "Decades of experience in title and mortgage services." },
-    { iconClass: "bi bi-gear-wide-connected", title: "Tailored Solutions", text: "Flexible and customizable services to fit your business needs." },
-    { iconClass: "bi bi-cpu-fill", title: "Advanced Technology", text: "Utilizing RPA, AI and intelligent data tools for efficiency." },
-    { iconClass: "bi bi-headset", title: "Exceptional Support", text: "Dedicated transition support and superior customer service." },
+    { iconClass: "bi bi-award-fill", title: "Proven Expertise", text: "Decades of experience in Title and Mortgage Services." },
+    { iconClass: "bi bi-gear-wide-connected", title: "Tailored Solutions", text: "Flexible and Customizable Services to fit your Business needs." },
+    { iconClass: "bi bi-cpu-fill", title: "Advanced Technology", text: "Utilizing RPA, AI and Intelligent Data Tools for Efficiency." },
+    { iconClass: "bi bi-headset", title: "Exceptional Support", text: "Dedicated Transition Support and Superior Customer Service." },
   ];
 
   return (
     <section id="why" className="container section-padding bg-white reveal">
       <div className="text-center mb-5">
         <h4 className="fw-bold mb-1 text-danger"><i className="bi bi-star-fill me-2"></i>We are the preferred choice</h4>
-        <h2 className="display-4 mb-5 text-center">Why Choose ETrack Title Services?</h2>
+        <h2 className="display-4 mb-5 text-center">Why Choose eTrack Title Services?</h2>
       </div>
       <div className="row align-items-center">
         <div className="col-lg-6">

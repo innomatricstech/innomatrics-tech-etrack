@@ -9,14 +9,14 @@ export default function MortgageServices() {
   ];
 
   return (
-    // Use 'container-fluid' on the section to make the background full width
+  
     <section id="mortgageservices" className="full-width-section-bg section-padding reveal">
       {/* Use a regular 'container' inside for content alignment and max-width */}
       <div className="container">
         <h2 className="display-4 mb-5 text-center">End-to-End Mortgage Services</h2>
         <div className="row g-4 justify-content-center">
           {categories.map((cat, i) => (
-            // Using col-xl-3 to ensure 4 cards fit nicely on extra-large screens
+            
             <div key={i} className="col-lg-3 col-md-6 col-sm-12">
               {/* Added shadow-lg for more depth and kept your original classes */}
               <div className="card h-100 shadow-lg border-0 mortgage-card card-hover-light text-center">

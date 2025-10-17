@@ -13,7 +13,7 @@ export default function About() {
 
   return (
   <section id="about" className="container section-padding reveal">
-      <h2 className="display-4 brand-text mb-4 text-center">About ETrack Title Services Inc.</h2>
+      <h2 className="display-4 brand-text mb-4 text-center">About eTrack Title Services Inc.</h2>
       
       {/* ------------------------------------------------------------- 
           --- 1. TOP ROW: Text and Image Side-by-Side ---
@@ -23,7 +23,7 @@ export default function About() {
         {/* 1a. Text Content Column (7/12 width on large screens) */}
         <div className="col-lg-7">
           <p className="lead text-center text-lg-start">
-            ETrack Title Services Inc. is established to serve as a <strong>true extension of your title company’s operation</strong>.
+            eTrack Title Services Inc. is established to serve as a <strong>true extension of your title company’s operation</strong>.
             With <strong>over 20 years of experience</strong> in the Mortgage and Title industry, we combine deep industry expertise with an unwavering commitment to <strong>accuracy, compliance, and speed</strong>.
           </p>
           <p className="lead text-center text-lg-start">
@@ -31,7 +31,7 @@ export default function About() {
             Our team delivers <strong>reliable, timely title reports</strong> that help clients <strong>close with confidence</strong>, while maintaining the highest standards of due diligence.
           </p>
           <p className="lead text-center text-lg-start">
-            What sets ETrack apart is our ability to offer <strong>scalable, cost-effective support</strong> that adapts to your business. We help title companies reduce operational costs by <strong>up to 40%</strong> through efficient, reliable outsourcing.
+            What sets eTrack apart is our ability to offer <strong>scalable, cost-effective support</strong> that adapts to your business. We help title companies reduce operational costs by <strong>up to 40%</strong> through efficient, reliable outsourcing.
           </p>
           <p className="lead text-center text-lg-start">
             Beyond title, we support in-house mortgage services with <strong>end-to-end processing support</strong> across FHA, VA, and Conventional loans—from origination to post-closing audit.

@@ -4,7 +4,7 @@
 
 :root {
 
-  --brand-text-color: #333; 
+  --brand-text-color: #333;
 
   --navbar-light-bg: rgba(255, 255, 255, 0.8);
 
@@ -22,7 +22,7 @@
 
   --section-padding: 100px 0;
 
-  --section-bg-light: #f8f9fa; 
+  --section-bg-light: #f8f9fa;
 
   --text-light-color: #e0e0e0; /* A soft white for text on dark backgrounds */
 
@@ -46,11 +46,11 @@
 
 body {
 
-  margin-top: 90px; 
+  margin-top: 90px;
 
   font-family: "Poppins", sans-serif;
 
-  color: var(--brand-text-color); 
+  color: var(--brand-text-color);
 
   background: #fff;
 
@@ -65,8 +65,6 @@ body {
 /* ---------------- Navbar (Enhanced Layout and Style) ---------------- */
 
 
-
-/* NOTE: The class .bg-info and its linear-gradient(white) rule appears to be unused or may be a typo for another class. It's left as is for now. */
 
 .bg-info{
 
@@ -166,13 +164,7 @@ body {
 
 .navbar-logo img {
 
-  height: 100px;
-
-  width: auto;
-
   transition: transform 0.4s ease, filter 0.4s ease, height 0.3s ease;
-
-  animation: logo-pulse 8s infinite ease-in-out alternate;
 
 }
 
@@ -180,9 +172,9 @@ body {
 
 .navbar-logo img:hover {
 
-  transform: scale(1.15) rotate(-2deg);
+  /* Zoom straight only */
 
-  filter: drop-shadow(0 0 15px var(--brand-sky-accent)) brightness(1.1);
+  transform: scale(1.15);
 
 }
 
@@ -216,15 +208,15 @@ body {
 
   font-weight: 600;
 
-  text-transform: uppercase;
-
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 
   transition: all 0.3s ease;
 
   position: relative;
 
-  padding: 10px 15px;
+  padding: 12px 15px;
+
+  font-size: 18px;
 
 }
 
@@ -270,7 +262,7 @@ body {
 
 
 
-/* Navbar Dropdown */
+/* Navbar Dropdown FIX */
 
 
 
@@ -285,6 +277,8 @@ body {
 
 
 .dropdown-menu {
+
+  /* FIX: Set background to the desired mid-tone blue */
 
   background-color: var(--brand-blue-mid);
 
@@ -302,7 +296,7 @@ body {
 
 .dropdown-menu li a {
 
-  color: #249de9; /* This blue seems specific, possibly a leftover from Bootstrap default */
+  color: #249de9;
 
   padding: 10px 15px;
 
@@ -358,7 +352,7 @@ body {
 
 
 
-/* ---------------- Hero Section ---------------- */
+/* ---------------- Hero Section (Dynamic Background Transition) ---------------- */
 
 
 
@@ -392,6 +386,16 @@ body {
 
 
 
+/* Class for smooth image background transition */
+
+.hero-section.hero-image-transition {
+
+    transition: background-image 1.5s ease-in-out;
+
+}
+
+
+
 .hero-section.parallax {
 
   transform: translateY(20px);
@@ -408,7 +412,7 @@ body {
 
   inset: -50px;
 
-  background: radial-gradient(circle at 10% 20%, var(--brand-sky-accent) 0%, transparent 30%), 
+  background: radial-gradient(circle at 10% 20%, var(--brand-sky-accent) 0%, transparent 30%),
 
               radial-gradient(circle at 80% 90%, var(--brand-blue-mid) 0%, transparent 40%);
 
@@ -444,7 +448,7 @@ body {
 
   text-shadow: 0 0 7px var(--brand-sky-accent), 0 0 15px var(--brand-sky-accent), 0 0 25px rgba(90, 217, 249, 0.7);
 
-  animation: fadeSlideDown 1.4s ease both, glowPulse 3s infinite ease-in-out;
+  /* Removed static animation here, using .hero-text-slide instead */
 
 }
 
@@ -480,7 +484,7 @@ body {
 
     padding: 14px 40px;
 
-    color: #fff; 
+    color: #fff;
 
     font-weight: 700;
 
@@ -490,15 +494,13 @@ body {
 
     transition: all 0.4s ease-in-out;
 
-    animation: bounceIn 1s ease-out;
-
 }
 
 
 
 .brand-btn:hover {
 
-    transform: translateY(-7px) scale(1.02);
+    transform: scale(1.02);
 
     box-shadow: 0 18px 35px rgba(90, 217, 249, 0.9);
 
@@ -532,7 +534,7 @@ body {
 
 .abstract-section-padding {
 
-  padding: 80px 0 120px 0; 
+  padding: 80px 0 120px 0;
 
 }
 
@@ -552,7 +554,7 @@ h2.display-4 {
 
   font-weight: 800;
 
-  color: var(--brand-blue-dark); 
+  color: var(--brand-blue-dark);
 
   position: relative;
 
@@ -568,7 +570,7 @@ h2.display-4 {
 
 #titleservices h2.display-4 {
 
-  color: #fff; 
+  color: var(--brand-blue-dark);
 
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 15px var(--brand-sky-accent);
 
@@ -610,21 +612,21 @@ h2.display-4::after {
 
 .brand-bg {
 
-  background-color: var(--brand-blue-dark); 
+  background-color: var(--section-bg-light);
 
-  background-image: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.0) 100%);
+  background-image: linear-gradient(180deg, rgba(90, 217, 249, 0.05) 0%, rgba(248, 249, 250, 0) 100%);
 
-  color: var(--text-light-color); 
+  color: var(--brand-blue-dark);
 
 }
+
+
 
 
 
 /* ---------------- About Section Image & Layout Styles ---------------- */
 
 
-
-/* Text should be left-aligned on large screens when image is present */
 
 .col-lg-7 p.text-lg-start {
 
@@ -642,15 +644,13 @@ h2.display-4::after {
 
 
 
-/* Specific image styling for the About section */
-
 .about-section-image {
 
-    max-height: 450px; 
+    max-height: 450px;
 
     width: 100%;
 
-    object-fit: contain; 
+    object-fit: contain;
 
     border-radius: 12px;
 
@@ -666,17 +666,15 @@ h2.display-4::after {
 
     transform: scale(1.02);
 
-    box-shadow: 0 15px 40px rgba(90, 217, 249, 0.5); 
+    box-shadow: 0 15px 40px rgba(90, 217, 249, 0.5);
 
 }
 
 
 
-/* Ensure the 'Who We Serve' box has appropriate alignment when in a column */
-
 .who-we-serve-box {
 
-    max-width: 550px; 
+    max-width: 550px;
 
     margin-left: auto;
 
@@ -692,11 +690,9 @@ h2.display-4::after {
 
 
 
-/* Use a slightly different background for visual separation */
-
 .brand-bg-light {
 
-    background-color: var(--section-bg-light); 
+    background-color: var(--section-bg-light);
 
     border: 1px solid rgba(0, 0, 0, 0.05);
 
@@ -706,13 +702,11 @@ h2.display-4::after {
 
 .who-we-serve-box h3 {
 
-    color: var(--brand-blue-dark); 
+    color: var(--brand-blue-dark);
 
 }
 
 
-
-/* Style for the individual client item container */
 
 .client-badge-item {
 
@@ -722,11 +716,11 @@ h2.display-4::after {
 
     cursor: pointer;
 
-    border-bottom: 4px solid var(--brand-blue-mid) !important; 
+    border-bottom: 4px solid var(--brand-blue-mid) !important;
 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 
-    height: 100%; 
+    height: 100%;
 
     display: flex;
 
@@ -738,27 +732,23 @@ h2.display-4::after {
 
     padding: 1rem;
 
-    border-radius: 0.375rem; 
+    border-radius: 0.375rem;
 
 }
 
 
-
-/* Hover effect */
 
 .client-badge-item:hover {
 
     transform: translateY(-8px) scale(1.03);
 
-    box-shadow: 0 12px 30px rgba(90, 217, 249, 0.4); 
+    box-shadow: 0 12px 30px rgba(90, 217, 249, 0.4);
 
-    border-bottom-color: var(--brand-sky-accent) !important; 
+    border-bottom-color: var(--brand-sky-accent) !important;
 
 }
 
 
-
-/* Styling the Icon/Emoji */
 
 .client-badge-item .h3 {
 
@@ -766,11 +756,11 @@ h2.display-4::after {
 
     line-height: 1;
 
-    color: var(--brand-sky-accent); 
+    color: var(--brand-sky-accent);
 
     transition: transform 0.3s ease;
 
-    margin-bottom: 0.5rem; 
+    margin-bottom: 0.5rem;
 
 }
 
@@ -778,13 +768,11 @@ h2.display-4::after {
 
 .client-badge-item:hover .h3 {
 
-    transform: rotateY(360deg); 
+    transform: rotateY(360deg);
 
 }
 
 
-
-/* Styling the Client Name */
 
 .client-badge-item p {
 
@@ -792,7 +780,7 @@ h2.display-4::after {
 
     font-size: 0.95rem;
 
-    font-weight: 600; 
+    font-weight: 600;
 
     margin-bottom: 0;
 
@@ -800,27 +788,21 @@ h2.display-4::after {
 
 
 
-/* ---------------- Full-Width Mortgage Services (NEW STYLES) ---------------- */
+/* ---------------- Full-Width Mortgage Services ---------------- */
 
 
-
-/* Ensures the background of the section spans 100% width when using container-fluid */
 
 .full-width-section-bg {
 
-    width: 100%; 
+    width: 100%;
 
-    background: var(--section-bg-light); 
+    background: var(--section-bg-light);
 
 }
 
 
 
-/* Updated styling for the icon inside the card */
-
 .mortgage-card .icon-wrapper {
-
-    /* Using Flexbox to center the icon */
 
     display: flex;
 
@@ -838,7 +820,7 @@ h2.display-4::after {
 
     margin-bottom: 1rem;
 
-    box-shadow: 0 4px 10px rgba(90, 217, 249, 0.5); /* Icon glow */
+    box-shadow: 0 4px 10px rgba(90, 217, 249, 0.5);
 
     transition: all 0.4s ease-in-out;
 
@@ -858,7 +840,7 @@ h2.display-4::after {
 
 .mortgage-card .icon-wrapper i {
 
-    color: #fff !important; /* White icon on blue background */
+    color: #fff !important;
 
     font-size: 1.8rem !important;
 
@@ -868,21 +850,19 @@ h2.display-4::after {
 
 .service-points li {
 
-    font-size: 0.95rem; /* Slightly smaller font for list items for clean look */
+    font-size: 0.95rem;
 
 }
 
 
 
-/* ---------------- Title Services Section (EXISTING & MODIFIED Card Styles) ---------------- */
+/* ---------------- Title Services Section (Card Styles) ---------------- */
 
 
-
-/* Style for the container card */
 
 .service-card {
 
-    background: #fff; /* Cards remain white */
+    background: #fff;
 
     border-radius: 12px;
 
@@ -892,7 +872,7 @@ h2.display-4::after {
 
     transition: all 0.4s ease-in-out;
 
-    border-bottom: 5px solid var(--brand-sky-accent); /* Accent border for depth */
+    border-bottom: 5px solid var(--brand-sky-accent);
 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
@@ -904,21 +884,19 @@ h2.display-4::after {
 
     transform: translateY(-8px) scale(1.01);
 
-    box-shadow: 0 18px 40px rgba(90, 217, 249, 0.4); /* Glow on hover with sky accent */
+    box-shadow: 0 18px 40px rgba(90, 217, 249, 0.4);
 
-    border-bottom-color: var(--brand-blue-mid); 
+    border-bottom-color: var(--brand-blue-mid);
 
 }
 
 
 
-/* Titles inside the card */
+.service-card h4.brand-text {
 
-.service-card h4.brand-text { /* Targeting specifically with .brand-text class */
+    color: var(--brand-blue-dark);
 
-    color: var(--brand-blue-dark); /* Dark blue for the card titles on white background */
-
-    border-bottom: 2px solid var(--section-bg-light); 
+    border-bottom: 2px solid var(--section-bg-light);
 
     padding-bottom: 15px;
 
@@ -926,19 +904,15 @@ h2.display-4::after {
 
 
 
-/* Icon style for titles */
+.service-card h4.brand-text i {
 
-.service-card h4.brand-text i { /* Targeting specifically with .brand-text class */
-
-    color: var(--brand-blue-dark); 
+    color: var(--brand-blue-dark);
 
     font-size: 1.5rem;
 
 }
 
 
-
-/* Styling the list items */
 
 .service-list li {
 
@@ -948,7 +922,7 @@ h2.display-4::after {
 
     border-bottom: 1px dashed rgba(45, 96, 165, 0.1);
 
-    color: var(--brand-text-color); /* Ensures text is black/dark gray */
+    color: var(--brand-text-color);
 
     display: flex;
 
@@ -958,11 +932,9 @@ h2.display-4::after {
 
 
 
-/* Styling the list icons */
-
 .service-list li i {
 
-    color: var(--brand-sky-accent); /* Sky accent for the list item icons for good contrast */
+    color: var(--brand-sky-accent);
 
     font-size: 1.2rem;
 
@@ -973,8 +945,6 @@ h2.display-4::after {
 }
 
 
-
-/* Remove last border for clean look */
 
 .service-list li:last-child {
 
@@ -1038,9 +1008,9 @@ h2.display-4::after {
 
 .card-hover-light:hover {
 
-    transform: translateY(-12px) rotate(-1deg) scale(1.02);
+    transform: translateY(-8px);
 
-    box-shadow: 0 20px 50px rgba(90, 217, 249, 0.35);
+    box-shadow: 0 15px 40px rgba(90, 217, 249, 0.5);
 
 }
 
@@ -1061,8 +1031,6 @@ h2.display-4::after {
   border-top: 5px solid var(--brand-blue-mid);
 
   transition: border-color 0.4s;
-
-  animation: bounceIn 0.8s ease-out;
 
 }
 
@@ -1105,16 +1073,6 @@ h2.display-4::after {
   animation: staggerFade 0.6s ease forwards;
 
 }
-
-
-
-.list-unstyled li i {
-
-  animation: floatIn 2s infinite ease-in-out;
-
-}
-
-
 
 /* ---------------- Reveal/Scroll Animations ---------------- */
 
@@ -1202,8 +1160,6 @@ h2.display-4::after {
 
   z-index: 999;
 
-  animation: bounceIn 0.5s ease-out;
-
 }
 
 
@@ -1238,7 +1194,7 @@ footer {
 
   background: var(--brand-blue-dark);
 
-  color: var(--text-light-color); 
+  color: var(--text-light-color);
 
   text-align: center;
 
@@ -1252,65 +1208,55 @@ footer {
 
 
 
-/* ---------------- PRE-FOOTER / CALL TO ACTION STYLES (NEW) ---------------- */
+/* ---------------- PRE-FOOTER / CALL TO ACTION STYLES ---------------- */
 
 
-
-/* Custom styles for the gradient background in the pre-footer section */
 
 .bg-gradient-blue {
 
     background: linear-gradient(90deg, var(--brand-blue-mid) 0%, var(--brand-blue-dark) 100%);
 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 
 }
 
 
-
-/* Utility class used in pre-footer text (assuming a soft white color) */
 
 .text-color {
 
-  color: rgb(14, 14, 53) !important; /* Note: This color is very dark on a dark background. Might need adjustment if text is on .bg-gradient-blue. */
+  color: rgb(14, 14, 53) !important;
 
 }
 
 
 
-/* Style for the main email CTA link */
-
 .pre-footer-cta {
 
-    color: white !important; 
+    color: white !important;
 
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 
     transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 
     position: relative;
 
-    display: inline-block; 
+    display: inline-block;
 
 }
 
 
-
-/* Attractive Hover Effect: Color change and slight pulse */
 
 .pre-footer-cta:hover {
 
-    color: var(--brand-sky-accent) !important; 
+    color: var(--brand-sky-accent) !important;
 
-    transform: scale(1.05); 
+    transform: scale(1.05);
 
-    text-decoration: none; 
+    text-decoration: none;
 
 }
 
 
-
-/* Animation trigger for the icon */
 
 .pre-footer-cta:hover ~ .text-center .bi-envelope-fill,
 
@@ -1324,23 +1270,19 @@ footer {
 
 
 
-/* ---------------- NEW STYLES FOR ROOFING REPORTS SECTION ---------------- */
+/* ---------------- ROOFING REPORTS SECTION ---------------- */
 
 
-
-/* Full-width container and background */
 
 .roofing-bg-section {
 
-    background-color: var(--section-bg-light); /* Light gray background for contrast */
+    background-color: var(--section-bg-light);
 
     width: 100%;
 
 }
 
 
-
-/* Feature Cards (Products & Benefits) */
 
 .feature-card-roofing {
 
@@ -1408,11 +1350,7 @@ footer {
 
 
 
-/* New wrapper for the pricing list and button */
-
 .pricing-order-wrapper {
-
-    /* Use a white background card structure to make it pop */
 
     background: var(--pricing-card-bg);
 
@@ -1428,21 +1366,19 @@ footer {
 
 
 
-/* Pricing Section Styling (Modified) */
-
 .pricing-header {
 
     background-color: var(--brand-blue-mid);
 
     color: #fff;
 
-    padding: 18px 15px; 
+    padding: 18px 15px;
 
     border-radius: 10px 10px 0 0;
 
     font-weight: 700;
 
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
 
     text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 
@@ -1454,13 +1390,13 @@ footer {
 
     background: #fff;
 
-    border: none; 
+    border: none;
 
     border-radius: 0 0 10px 10px;
 
-    box-shadow: none; 
+    box-shadow: none;
 
-    padding: 15px 25px; 
+    padding: 15px 25px;
 
 }
 
@@ -1468,9 +1404,9 @@ footer {
 
 .price-item-list li {
 
-    padding: 12px 0; 
+    padding: 12px 0;
 
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08); 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 
     display: flex;
 
@@ -1480,7 +1416,7 @@ footer {
 
     font-weight: 500;
 
-    transition: background-color 0.2s; 
+    transition: background-color 0.2s;
 
     cursor: default;
 
@@ -1490,7 +1426,7 @@ footer {
 
 .price-item-list li:hover:not(.addon) {
 
-    background-color: rgba(90, 217, 249, 0.05); 
+    background-color: rgba(90, 217, 249, 0.05);
 
 }
 
@@ -1508,23 +1444,21 @@ footer {
 
     color: var(--brand-blue-dark);
 
-    font-weight: 800; 
+    font-weight: 800;
 
-    font-size: 1.15rem; 
+    font-size: 1.15rem;
 
 }
 
 
 
-/* Specific styling for the wall measurement addon to highlight it */
-
 .price-item-list li.addon {
 
-    background-color: rgba(90, 217, 249, 0.1); 
+    background-color: rgba(90, 217, 249, 0.1);
 
     padding: 12px 0;
 
-    font-style: normal; 
+    font-style: normal;
 
     font-weight: 600;
 
@@ -1540,15 +1474,13 @@ footer {
 
 
 
-/* Order button polish */
-
 .order-cta-btn {
 
-    background: var(--gradient-main) !important;
+    background: orange !important;
 
     border: none !important;
 
-    color: #fff !important; 
+    color: #fff !important;
 
     padding: 12px 30px !important;
 
@@ -1566,27 +1498,25 @@ footer {
 
 .order-cta-btn:hover {
 
-    transform: scale(1.05) translateY(-2px);
+    transform: none;
 
     box-shadow: 0 8px 20px rgba(90, 217, 249, 0.7) !important;
 
-    color: #fff !important; 
+    color: #fff !important;
 
 }
 
 
 
-/* Order button container polish (New) */
-
 .order-cta-container {
 
     padding: 25px;
 
-    background-color: #fff; 
+    background-color: #fff;
 
     border-radius: 0 0 12px 12px;
 
-    border-top: 2px solid var(--section-bg-light); 
+    border-top: 2px solid var(--section-bg-light);
 
 }
 
@@ -1602,7 +1532,7 @@ footer {
 
 
 
-/* ---------------- Placeholder for Order Form Styling ---------------- */
+/* ---------------- Order Form Styling ---------------- */
 
 
 
@@ -1615,8 +1545,6 @@ footer {
 
 
 .form-check-input:checked {
-
-  
 
     border-color: var(--brand-blue-mid);
 
@@ -1702,11 +1630,203 @@ footer {
 
 
 
+/* ---------------- WHY CHOOSE IMAGE CARDS (NEW) ---------------- */
+
+
+
+.why-feature-item .why-icon-style {
+
+    font-size: 2rem;
+
+    color: var(--brand-sky-accent);
+
+    transition: color 0.3s ease;
+
+}
+
+
+
+.why-feature-item:hover .why-icon-style {
+
+    color: var(--brand-blue-mid);
+
+}
+
+
+
+.why-image-card {
+
+    height: 180px;
+
+    background-size: cover;
+
+    background-position: center;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    transition: all 0.4s ease;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+.why-image-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+
+    transition: background 0.4s ease;
+
+}
+
+
+
+.why-image-card .image-overlay-text {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+
+}
+
+
+
+.why-image-card .why-card-title {
+
+    font-size: 1.7rem;
+
+    color: #fff;
+
+}
+
+
+
+.why-image-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 40px rgba(90, 217, 249, 0.5);
+
+}
+
+
+
+.why-image-card:hover::before {
+
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+
+}
+
+
+
+.text-shadow-lg {
+
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+
+}
+
+
+
+/* --- Hero Navigation Buttons (Manual Controls) --- */
+
+
+
+.hero-nav-btn {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 10;
+
+    /* Semi-transparent dark blue background */
+
+    background: rgba(45, 96, 165, 0.7);
+
+    color: white;
+
+    border: none;
+
+    padding: 15px 18px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 1.5rem;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+    /* Ensure the buttons are visible above the background layer but below the content */
+
+    opacity: 0.9;
+
+}
+
+
+
+.hero-nav-btn:hover {
+
+    /* Changes to the accent color on hover */
+
+    background: var(--brand-sky-accent);
+
+    transform: translateY(-50%) scale(1.1);
+
+    opacity: 1;
+
+}
+
+
+
+.prev-btn {
+
+    left: 20px;
+
+}
+
+
+
+.next-btn {
+
+    right: 20px;
+
+}
+
+
+
+
+
 /* ================================================================ */
 
 /* 🌐 RESPONSIVE DESIGN – MOBILE-FIRST */
 
 /* ================================================================ */
+
+
 
 
 
@@ -1726,31 +1846,29 @@ footer {
 
 
 
-  /* Mobile menu collapse background and shadow */
+  .navbar-collapse {
 
-  .navbar-collapse { 
+    position: absolute;
 
-    position: absolute; 
+    top: 55%;
 
-    top: 55%; 
+    left: 0;
 
-    left: 0; 
+    right: 0;
 
-    right: 0; 
+    width: 100%;
 
-    width: 100%; 
+    border-radius: 12px;
 
-    border-radius: 12px; 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2); 
+    padding: 15px 0;
 
-    padding: 15px 0; 
-
-    background: #fff; 
+    background: #fff;
 
   }
 
-  
+
 
   .hero-section { height: 90vh; background-attachment: scroll; text-align: center; margin-top: 20px; }
 
@@ -1768,41 +1886,39 @@ footer {
 
   }
 
-  
 
-  /* --- ABOUT SECTION RESPONSIVE ORDERING --- */
 
   .col-lg-7 {
 
-    order: 2; /* Put text below image on tablet/mobile */
+    order: 2;
 
   }
 
   .col-lg-5 {
 
-    order: 1; /* Put image above text on tablet/mobile */
+    order: 1;
 
   }
 
   .col-lg-7 p {
 
-    text-align: center !important; /* Center text on smaller screens */
+    text-align: center !important;
 
   }
 
-  
+
 
   .client-badge-item {
 
-      padding: 20px; 
+      padding: 20px;
 
   }
 
-  
+
 
   .service-card {
 
-      margin-bottom: 20px; /* Add spacing between cards on mobile */
+      margin-bottom: 20px;
 
   }
 
@@ -1832,9 +1948,51 @@ footer {
 
   .brand-btn { font-size: 1rem; padding: 12px 30px; border-radius: 35px; }
 
+
+
+  /* Responsive adjustment for small screens (New Block Integrated) */
+
+  .hero-nav-btn {
+
+      padding: 10px 12px;
+
+      font-size: 1.2rem;
+
+  }
+
+  .prev-btn {
+
+      left: 10px;
+
+  }
+
+  .next-btn {
+
+      right: 10px;
+
+  }
+
 }
 
 
+
+
+
+@media (max-width: 576px) {
+
+    .why-image-card {
+
+        height: 150px;
+
+    }
+
+    .why-image-card .why-card-title {
+
+        font-size: 1.3rem;
+
+    }
+
+}
 
 
 
@@ -1844,7 +2002,7 @@ footer {
 
   body { margin-top: 60px; }
 
-    
+
 
   .navbar-logo img { height: 140px !important; }
 
@@ -1852,7 +2010,7 @@ footer {
 
   .navbar-toggler{margin-top: -40px;}
 
-  
+
 
   .hero-section h1 { font-size: 1.8rem; }
 
@@ -1860,19 +2018,11 @@ footer {
 
   .brand-btn { font-size: 0.9rem; padding: 9px 12px; }
 
-    
+
 
   footer { font-size: 0.75rem; padding: 30px 10px; }
 
 }
-
-
-
-/* ================================================================ */
-
-/* --- KEYFRAME ANIMATIONS (For .brand-btn, .hero-section, .reveal) --- */
-
-/* ================================================================ */
 
 
 
@@ -1918,20 +2068,6 @@ footer {
 
 
 
-@keyframes bounceIn {
-
-    0% { transform: scale(0.3); opacity: 0; }
-
-    50% { transform: scale(1.05); opacity: 1; }
-
-    70% { transform: scale(0.9); }
-
-    100% { transform: scale(1); }
-
-}
-
-
-
 @keyframes slideInLeft {
 
     0% { opacity: 0; transform: translateX(-100px); }
@@ -1962,20 +2098,6 @@ footer {
 
 
 
-@keyframes logo-pulse {
-
-    0% { filter: drop-shadow(0 0 5px rgba(90, 217, 249, 0.3)); }
-
-    50% { filter: drop-shadow(0 0 10px rgba(90, 217, 249, 0.6)); }
-
-    100% { filter: drop-shadow(0 0 5px rgba(90, 217, 249, 0.3)); }
-
-}
-
-
-
-/* Keyframe for the attractive email icon bounce */
-
 @keyframes bounce {
 
     0%, 100% {
@@ -1986,8 +2108,42 @@ footer {
 
     50% {
 
-        transform: translateY(-5px); 
+        transform: translateY(-5px);
 
     }
+
+}
+
+
+
+/* NEW: Keyframes for the dynamic hero content slide-in */
+
+@keyframes slideFadeIn {
+
+    0% {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+/* NEW: Class applied to the dynamic H1 and Button */
+
+.hero-text-slide {
+
+    animation: slideFadeIn 1.0s ease forwards;
 
 }

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom"; 
-import Logo from "../assets/images/etrack.png";
+import Logo from "../assets/logo.png";
 
 // Helper function to scroll to an anchor ID
 const scrollToHash = (hash) => {
@@ -77,7 +77,7 @@ export default function Navbar() {
               src={Logo}
               alt="ETrack Logo"
               className="img-fluid"
-              style={{ height: "200px", width: "auto" }}
+              style={{ height: "250px", width: "auto", padding:"2px" }}
             />
           </Link>
         </div>
@@ -98,24 +98,27 @@ export default function Navbar() {
         {/* -------------------------------------------------------------
             --- 3. Navbar Links & MOBILE Button (Centered on desktop) ---
             ------------------------------------------------------------- */}
-        <div 
+        < div 
           className="collapse navbar-collapse justify-content-center" 
           id="navMenu"
         >
+          {/* *** MODIFIED: Added Bootstrap font size utility class 'fs-5' to increase text size. 
+            You can use 'fs-6' for slightly smaller or 'fs-4' for even larger. ***
+          */}
           <ul className="navbar-nav mb-2 mb-lg-0 align-items-center">
             <li className="nav-item">
               <Link 
                 className="nav-link" 
                 to="/"
                 onClick={scrollToTop}
-              >Home</Link>
+              >HOME</Link>
             </li>
             <li className="nav-item">
               <a 
                 className="nav-link" 
                 href="#about"
                 onClick={(e) => handleNav(e, "#about")}
-              >About Us</a>
+              >ABOUT US</a>
             </li>
             <li className="nav-item dropdown">
               <a
@@ -125,7 +128,7 @@ export default function Navbar() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Services
+                SERVICES
               </a>
               <ul className="dropdown-menu">
                 <li><a className="dropdown-item" href="#titleservices" onClick={(e) => handleNav(e, "#titleservices")}>Title Services</a></li>
@@ -138,21 +141,16 @@ export default function Navbar() {
                 className="nav-link" 
                 href="#why"
                 onClick={(e) => handleNav(e, "#why")}
-              >Why ETrack</a>
+              >WHY eTrack</a>
             </li>
-             <li className="nav-item">
+              <li className="nav-item">
               <a 
                 className="nav-link" 
                 href="#contact"
                 onClick={(e) => handleNav(e, "#contact")}
-              >Contact</a>
+              >CONTACT</a>
             </li>
             
-            {/* -------------------------------------------------------------------
-                --- 4. PHONE NUMBER FOR MOBILE MENU ONLY (d-lg-none) ---
-                This item is hidden on large screens but appears when the toggle
-                button is clicked on small screens. Added mt-2 for spacing.
-                ------------------------------------------------------------------- */}
             <li className="nav-item d-lg-none mt-3"> 
                 <a 
                     className="brand-btn btn-sm text-decoration-none" 
@@ -171,7 +169,7 @@ export default function Navbar() {
                 href="tel:7038806311" 
                 onClick={(e) => handleNav(e, "#contact")}
             >
-                <i className="bi bi-telephone-fill me-1"></i> 703-880-6311
+                <i className="bi bi-telephone-fill me-1"></i>+1  703-880-6311
             </a>
         </div> 
         
